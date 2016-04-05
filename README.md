@@ -15,5 +15,8 @@ Streets Mural uses Mapbox Streets v7 as its data source. Most changes to the
 
 Automatically generated screenshots from locations in an around Munich, Germany.
 
-Munich, Rosenheimer Str. (Zoom 16)
+Muenchen, Rosenheimer Str. (Zoom 16)
 ![Munich, Central, Zoom 16](screenshots/16_11.592400074005127_48.13142150614048.png?raw=true "Munich, Central, Zoom 16")
+
+Muenchen Froettmaning (Zoom 15)
+![Muenchen Froettmaning (Zoom 15)](screenshots/15_11.629375_48.221045.png?raw=true "Muenchen Froettmaning (Zoom 15)")

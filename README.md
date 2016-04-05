@@ -1,11 +1,15 @@
-Streets Mural
+# Mural
 
 Based on the classic Mapbox Streets style, the *Mural* style aims for awesome
 looking print maps of urban centers and their surroundings.
 
+Streets Mural uses Mapbox Streets v7 as its data source. Most changes to the
+#road layer have been ported.
+
+## Limitations
 * Uses only German symbols for public transportation
 * Not optimized for zoom levels lower than 14
-* Still "work in progress"!
+* Still "work in progress"! Labels are still missing entirely.
 
 # Examples
 

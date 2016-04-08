@@ -16,9 +16,7 @@ Map { background-color: @land; }
 
 #road[class='major_rail'][type!='tram'] {
 	::line, ::hatch { line-color: #b7b7b7; }
-
 	::line { line-width:1; }
-
 	::hatch {
 		line-width: 4;
 		line-dasharray: 1, 24;
@@ -26,11 +24,8 @@ Map { background-color: @land; }
 }
 
 #road[class='minor_rail'][type!='tram'] {
-	::line,
-		::hatch { line-color: #b7b7b7; }
-
+	::line,	::hatch { line-color: #b7b7b7; }
 	::line { line-width:1; }
-
 	::hatch {
 		line-width: 4;
 		line-dasharray: 1, 24;
@@ -38,17 +33,13 @@ Map { background-color: @land; }
 }
 
 #road[class='major_rail'][structure='tunnel'] {
-	::line,
-		::hatch { line-color: #d9d9d9; }
-
+	::line, ::hatch { line-color: #d9d9d9; }
 	::line { line-width:1; }
-
 	::hatch {
 		line-width: 4;
 		line-dasharray: 1, 24;
 	}
 }
-
 
 // =====================================================================
 // WATER WAYS
@@ -110,6 +101,17 @@ Map { background-color: @land; }
 // LANDUSE
 // =====================================================================
 
+#landuse::lower[zoom>=7] {
+	[class='park'] {
+		polygon-fill: @park;
+		polygon-smooth: 0.4;
+		[zoom=7] { polygon-opacity: 0.2; }
+		[zoom=8] { polygon-opacity: 0.4; }
+		[zoom=9] { polygon-opacity: 0.6; }
+		[zoom=10]{ polygon-opacity: 0.8; }
+	}
+}
+
 #landuse[zoom>=7] {
 	[class='pitch'] {
 		polygon-fill: @pitch;
@@ -152,19 +154,12 @@ Map { background-color: @land; }
 	[class='piste'] {
 		polygon-fill: @snow;
 	}
-	[class='park'] {
-		polygon-fill: @park;
-		polygon-smooth: 0.4;
-		[zoom=7] { polygon-opacity: 0.2; }
-		[zoom=8] { polygon-opacity: 0.4; }
-		[zoom=9] { polygon-opacity: 0.6; }
-		[zoom=10]{ polygon-opacity: 0.8; }
-	}
 	[class='wood'],[class='scrub'] {
 		polygon-fill: @wood;
 		polygon-opacity: 0.25;
 	}
 }
+
 
 #landuse_overlay[zoom>=12] {
 	[class='wetland'] {

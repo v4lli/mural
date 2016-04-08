@@ -48,29 +48,12 @@
   [zoom>=16] { text-size: 18; text-wrap-width: 160; }
   [zoom=17] { text-size: 20; text-wrap-width: 200; }
 }
+*/
 
-// Stadtteile (z.B. Haidhausen Sued)
 
-#place_label[type='suburb'][zoom>=12][zoom<=14][localrank<=1],
-#place_label[type='suburb'][zoom>=15][zoom<=18] {
-  text-name: @name;
-  text-face-name: @sans_lt;
-  text-placement: point;
-  text-fill: @other_text;
-  text-size: 11;
-  text-halo-fill: @other_halo;
-  text-halo-radius: 1.5;
-  text-halo-rasterizer: fast;
-  text-wrap-width: 60;
-  text-wrap-before: true;
-  text-line-spacing: -2;
-  [zoom>=13] { text-size: 12; text-min-distance: 20; }
-  [zoom>=14] { text-size: 13; text-wrap-width: 80; }
-  [zoom>=15] { text-size: 14; text-wrap-width: 120; }
-  [zoom>=16] { text-size: 16; text-wrap-width: 160; }
-  [zoom>=17] { text-size: 20; text-wrap-width: 200; }
-}
 
+
+/*
 
 // =====================================================================
 // 4__ WATER LABELS

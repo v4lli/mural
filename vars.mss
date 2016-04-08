@@ -2,7 +2,7 @@
 @name: '[name]';
 
 // set up font sets for various weights and styles
-@sans_lt:           "Open Sans Regular","Arial Unicode MS Regular";
+@sans_lt:           "Roboto Medium";
 @sans_lt_italic:    "Open Sans Italic","Arial Unicode MS Regular";
 @sans:              "Open Sans Semibold","Arial Unicode MS Regular";
 @sans_bold:         "Open Sans Bold","Arial Unicode MS Regular";

@@ -145,8 +145,9 @@
       [zoom>=16] { line-width: 3.4; }
       [zoom>=17] { line-width: 3.8; }
       [zoom>=18] { line-width: 5.6; }
-        }
-      }
+
+    }
+    }
   }
 }
 

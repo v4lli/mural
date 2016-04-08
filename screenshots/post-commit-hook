@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -x
+
+LOCATIONS="16,11.592400074005127,48.13142150614048"
+LOCATIONS="$LOCATIONS 15,11.629375,48.221045"
+LOCATIONS="$LOCATIONS 16,11.54886245727539,48.10185727074718"
+BASE="http://localhost:3000/static"
+
+mkdir -p screenshots/
+
+for LOC in $LOCATIONS; do
+	FNAME="screenshots/$(echo $LOC | tr ',' '_').png"
+	rm -f "$FNAME"
+	wget $BASE/$LOC/800x600@2x.png?id=tmstyle:///mural_gh.tm2 \
+	   -O "$FNAME"
+done
+
+git add screenshots/*
+git commit -avm "Update screenshots"

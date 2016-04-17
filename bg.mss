@@ -144,6 +144,10 @@ Map { background-color: @land; }
 	[class='rock'] {
 		polygon-fill: @rock;
 	}
+  	[type='zoo'] {
+	polygon-fill:lighten(@park,10);
+
+	}
 	[class='industrial'] {
 		polygon-fill: @industrial;
 	}

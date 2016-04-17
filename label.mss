@@ -138,7 +138,7 @@
   text-repeat-distance: 1000;
   text-min-padding: 25;
 }
-
+*/
 
 // =====================================================================
 // 5__ ROAD LABELS
@@ -152,29 +152,33 @@
   // includes all data for z14+ via overzooming, the streets included in a
   // z14 vector tile include more features than ideal for optimal performance.
   [class='motorway'][zoom>=12],
-  [class='main'][zoom>=12],
-  [class='street'][zoom<=14][len>2500],
+  [class='primary'][zoom>=12],
+  [class='trunk'][zoom>=12],
+  [class='link'][zoom>=12],
+  [class='tertiary'][zoom>=15],
+  [class='secondary'][zoom>=15],
   [class='street'][zoom>=15],
   [class='street_limited'] {
     text-avoid-edges: true;
-    text-transform: uppercase;
     text-name: @name;
     text-character-spacing: 0.25;
     text-placement: line;
     text-face-name: @sans;
-    text-fill: #444;
-    text-size: 8;
+    text-fill: #666;
+    text-size: 6;
     text-halo-fill: @road_halo;
     text-halo-radius: 1.5;
     text-halo-rasterizer: fast;
     text-repeat-distance: 5000;
-    text-margin: 100;
+    text-margin: 10;
 
-    [zoom>=14] { text-size: 9; }
-    [zoom>=16] { text-size: 11; }
-    [zoom>=18] { text-size: 12; }
-    [class='motorway'],
-    [class='main'] {
+    [zoom>=14] { text-size: 6.5; }
+    [zoom>=16] { text-size: 8.5; }
+    [zoom>=18] { text-size: 9.5; }
+    [class='motorway'],[class='trunk'],
+    [class='primary'],[class='secondary'] {
+      text-transform: uppercase;
+      text-fill: #444;
       [zoom>=14] { text-size: 10; }
       [zoom>=16] { text-size: 11; text-face-name: @sans_bold; }
       [zoom>=17] { text-size: 12; }
@@ -182,6 +186,9 @@
     }
   }
 }
+
+
+/*
 
 // less prominent labels for all other types, by length
 #road_label['mapnik::geometry_type'=2]
@@ -199,24 +206,22 @@
     text-character-spacing: 0.25;
     text-placement: line;
     text-face-name: @sans;
-    text-fill: #666;
     text-size: 9;
-    text-halo-fill: @road_halo;
-    text-halo-radius: 1.5;
-    text-halo-rasterizer: fast;
-    //text-min-distance: 200; // only for labels w/ the same name
     [zoom>=17] { text-size: 10; }
     [zoom>=18] { text-size: 11; }
     text-repeat-distance: 5000;
     text-margin: 100;
   }
 }
+*/
 
 // =====================================================================
 // POI LABELS
 // =====================================================================
 #poi_label[type='Grave Yard'],
-#poi_label[type='School'],
+#poi_label[type='Cemetery'],
+#poi_label[type='Hospital'],
+#poi_label[type='Zoo'],
 #poi_label[type='Museum']{
   [zoom>=14][scalerank<3]{
     text-name: @name;
@@ -240,4 +245,3 @@
     }
   }
 }
-*/

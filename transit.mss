@@ -1,5 +1,6 @@
-// Stadtteile (z.B. Haidhausen Sued)
-
+// =====================================================================
+// Suburb Labels
+// =====================================================================
 #place_label[type='suburb'][zoom>=12][localrank=1] {
   text-name: @name;
   text-face-name: @sans_lt;
@@ -15,8 +16,9 @@
   text-allow-overlap: false;
 }
 
-// S + U-Bahn Labels
-/*
+// =====================================================================
+// Public Transit Stations
+// =====================================================================
 #rail_station_label[network=~'rail.*'][zoom>10] {
 	marker-file: url("img/rail/[network]-18.svg");
 	marker-height: 24;
@@ -39,5 +41,11 @@
 	text-halo-radius: 2;
 	text-dy: 15;
 	}
+    [name="München Hauptbahnhof Gleis 5-10"],
+    [name="München Hauptbahnhof"],
+    [name="München Hauptbahnhof Gleis 27-36"]{
+      text-name: '';
+      marker-opacity: 0;
+      marker-allow-overlap: true;
+    }
 }
-*/

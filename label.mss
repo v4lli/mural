@@ -55,86 +55,88 @@
 // =====================================================================
 
 #water_label {
-  [zoom<=15][area>200000],
-  [zoom=16][area>10000],
-  [zoom=17][area>10000],
-  [zoom>=18][area>0]{
-    text-name: @name;
-    text-halo-radius: 1.5;
-    text-halo-rasterizer: fast;
-    text-size: 11;
-    text-wrap-width: 50;
-    text-wrap-before: true;
-    text-halo-fill: #fff;
-    text-line-spacing: -2;
-    text-face-name: @sans_italic;
-    text-fill: darken(@water, 30);
-  }
-  [zoom>=14][area>3200000],
-  [zoom>=15][area>800000],
-  [zoom>=16][area>200000],
-  [zoom>=17][area>50000],
-  [zoom>=18][area>10000] {
-    text-size: 12;
-    text-wrap-width: 75;
-  }
-  [zoom>=15][area>3200000],
-  [zoom>=16][area>800000],
-  [zoom>=17][area>200000],
-  [zoom>=18][area>50000] {
-    text-size: 14;
-    text-wrap-width: 100;
-    text-halo-radius: 2;
-  }
-  [zoom>=16][area>3200000],
-  [zoom>=17][area>800000],
-  [zoom>=18][area>200000] {
-    text-size: 16;
-    text-wrap-width: 125;
-  }
-  [zoom>=17][area>3200000],
-  [zoom>=18][area>800000] {
-    text-size: 18;
-    text-wrap-width: 150;
-  }
+	[zoom<=15][area>200000],
+	[zoom=16][area>10000],
+	[zoom=17][area>10000],
+	[zoom>=18][area>0]{
+		text-name: @name;
+		text-halo-radius: 1.5;
+		text-halo-rasterizer: fast;
+		text-size: 11;
+		text-wrap-width: 50;
+		text-wrap-before: true;
+		text-halo-fill: #fff;
+		text-line-spacing: -2;
+		text-face-name: @sans_italic;
+		text-fill: darken(@water, 30);
+	}
+	[zoom>=14][area>3200000],
+	[zoom>=15][area>800000],
+	[zoom>=16][area>200000],
+	[zoom>=17][area>50000],
+	[zoom>=18][area>10000] {
+		text-size: 12;
+		text-wrap-width: 75;
+	}
+	[zoom>=15][area>3200000],
+	[zoom>=16][area>800000],
+	[zoom>=17][area>200000],
+	[zoom>=18][area>50000] {
+		text-size: 14;
+		text-wrap-width: 100;
+		text-halo-radius: 2;
+	}
+	[zoom>=16][area>3200000],
+	[zoom>=17][area>800000],
+	[zoom>=18][area>200000] {
+		text-size: 16;
+		text-wrap-width: 125;
+	}
+	[zoom>=17][area>3200000],
+	[zoom>=18][area>800000] {
+		text-size: 18;
+		text-wrap-width: 150;
+	}
 }
-
-/*
 
 #waterway_label[class='river'][zoom>=13],
 #waterway_label[class='canal'][zoom>=15],
-#waterway_label[class='stream'][zoom>=17],
-#waterway_label[class='stream_intermittent'][zoom>=17] {
-  text-avoid-edges: true;
-  text-name: @name;
-  text-face-name: @sans_italic;
-  text-fill: @water * 0.75;
-  text-halo-fill: fadeout(#fff,80%);
-  text-halo-radius: 1.5;
-  text-halo-rasterizer: fast;
-  text-placement: line;
-  text-size: 10;
-  text-character-spacing: 1;
-  [class='river'][zoom=14],
-  [class='canal'][zoom=16],
-  [class='stream'][zoom>=18],
-  [class='stream_intermittent'][zoom>=18] {
-    text-size: 10;
-  }
-  [class='river'][zoom=15],
-  [class='canal'][zoom>=17] {
-    text-size: 11;
-    text-spacing: 300;
-  }
-  [class='river'][zoom>=16],
-  [class='canal'][zoom>=18] {
-    text-size: 14;
-    text-spacing: 300;
-  }
-  text-margin: 25;
-  text-repeat-distance: 1000;
-  text-min-padding: 25;
+#waterway_label[class='stream'][zoom>=15],
+#waterway_label[class='stream_intermittent'][zoom>=15] {
+	text-name: @name;
+	text-face-name: @sans_italic;
+	text-repeat-distance: 5000000;
+	text-avoid-edges: true;
+	text-placement: line;
+	text-spacing: 30000;
+	text-min-path-length: 200;
+	text-fill: darken(@water, 30);
+	text-halo-fill: fadeout(#fff,80%);
+	text-halo-radius: 1.5;
+	text-halo-rasterizer: fast;
+	text-allow-overlap: false;
+	text-size: 10;
+	text-character-spacing: 1;
+	[class='river'][zoom=14],
+	[class='canal'][zoom=16],
+	[class='stream'][zoom>=15],
+	[class='stream_intermittent'][zoom>=15] {
+		text-size: 10;
+	}
+	[class='river'][zoom=15],
+	[class='canal'][zoom>=17] {
+		text-size: 12;
+		text-spacing: 400;
+	}
+	[class='river'][zoom>=16],
+	[class='canal'][zoom>=18] {
+		text-size: 16;
+		text-spacing: 500;
+	}
 }
+
+
+/*
 
 // =====================================================================
 // 5__ ROAD LABELS

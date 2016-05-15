@@ -11,9 +11,9 @@ bounds:
   - 180
   - 85
 center: 
-  - 0
-  - 0
-  - 3
+  - 11.5271
+  - 48.1285
+  - 12
 description: ''
 format: "png8:m=h:c=64"
 interactivity_layer: ''
@@ -45,7 +45,7 @@ layers:
   - housenum_label
   - contour.label
 maxzoom: 19
-minzoom: 0
+minzoom: 10
 name: Streets Mural
 source: "mapbox:///mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v7"
 styles: 

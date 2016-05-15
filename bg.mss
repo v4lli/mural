@@ -1,4 +1,7 @@
-Map { background-color: @land; }
+Map {
+  background-color: @land;
+  buffer-size: 8192;
+}
 
 // =====================================================================
 // WATER AREA

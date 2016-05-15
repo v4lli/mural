@@ -44,7 +44,7 @@ layers:
   - waterway_label
   - housenum_label
   - contour.label
-maxzoom: 16
+maxzoom: 19
 minzoom: 10
 name: Streets Mural
 source: "mapbox:///mapbox.mapbox-terrain-v2,mapbox.mapbox-streets-v7"

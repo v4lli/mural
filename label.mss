@@ -125,18 +125,15 @@
 	}
 	[class='river'][zoom=15],
 	[class='canal'][zoom>=17] {
-		text-size: 12;
+		text-size: 11;
 		text-spacing: 400;
 	}
 	[class='river'][zoom>=16],
 	[class='canal'][zoom>=18] {
-		text-size: 16;
-		text-spacing: 500;
+		text-size: 14;
+		text-spacing: 400;
 	}
 }
-
-
-/*
 
 // =====================================================================
 // 5__ ROAD LABELS
@@ -178,7 +175,7 @@
 		[class='primary'],[class='secondary'] {
 			text-transform: uppercase;
 			text-fill: #444;
-			text-min-path-length: 170;;
+			text-min-path-length: 170;
 
 			text-spacing: 80000;
 			text-margin: 100;
@@ -214,12 +211,15 @@
 }
 
 
-
 // less prominent labels for all other types, by length
 #road_label['mapnik::geometry_type'=2]
 [class!='motorway']
-[class!='main']
+[class!='primary']
+[class!='secondary']
+[class!='construction']
+[class!='tertiary']
 [class!='street']
+[class!='path']
 [class!='street_limited'] {
   [len>10000][zoom>=12],
   [len>5000][zoom>=13],
@@ -231,14 +231,19 @@
     text-character-spacing: 0.25;
     text-placement: line;
     text-face-name: @sans;
-    text-size: 9;
+    text-size: 8;
+	text-fill: #666;
+  		text-halo-fill: @road_halo;
+		text-halo-radius: 1;
+		text-halo-rasterizer: fast;
+
     [zoom>=17] { text-size: 10; }
     [zoom>=18] { text-size: 11; }
     text-repeat-distance: 5000;
     text-margin: 100;
   }
 }
-*/
+
 
 // =====================================================================
 // POI LABELS

@@ -50,18 +50,13 @@
 }
 */
 
-
-
-
-/*
-
 // =====================================================================
 // 4__ WATER LABELS
 // =====================================================================
 
 #water_label {
   [zoom<=15][area>200000],
-  [zoom=16][area>50000],
+  [zoom=16][area>10000],
   [zoom=17][area>10000],
   [zoom>=18][area>0]{
     text-name: @name;
@@ -73,7 +68,7 @@
     text-halo-fill: #fff;
     text-line-spacing: -2;
     text-face-name: @sans_italic;
-    text-fill: @water * 0.75;
+    text-fill: darken(@water, 30);
   }
   [zoom>=14][area>3200000],
   [zoom>=15][area>800000],
@@ -103,6 +98,8 @@
     text-wrap-width: 150;
   }
 }
+
+/*
 
 #waterway_label[class='river'][zoom>=13],
 #waterway_label[class='canal'][zoom>=15],

@@ -17,4 +17,4 @@ for LOC in $LOCATIONS; do
 done
 
 git add screenshots/*
-git commit -avm "Update screenshots"
+git commit -m "Update screenshots"

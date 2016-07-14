@@ -6,7 +6,7 @@
   text-face-name: @sans_lt;
   text-placement: point;
   text-fill: @other_text;
-  text-size: 20;
+  text-size: 17;
   text-halo-fill: @other_halo;
   text-halo-radius: 1.5;
   text-halo-rasterizer: fast;
@@ -14,6 +14,11 @@
   text-wrap-before: true;
   text-line-spacing: -2;
   text-allow-overlap: false;
+    [name="Siedlung am Lerchenauer See"],
+    [name="Au-Haidhausen"], [name="Sendlinger Feld"],
+    [name="Parkstadt Bogenhausen"],  [name="Cosimapark"],  [name="Fideliopark"]{
+      text-name: '';
+    }
 }
 
 // =====================================================================
@@ -21,7 +26,7 @@
 // =====================================================================
 #rail_station_label[network=~'rail.*'][zoom>10] {
 	marker-file: url("img/rail/[network]-18.svg");
-	marker-height: 24;
+	marker-height: 18;
 	marker-allow-overlap: false;
 
 	text-name: @name;
@@ -37,12 +42,13 @@
 	text-allow-overlap: false;
 
 	[zoom>=15] {
-	text-size: 12;
+	text-size: 10;
 	text-halo-radius: 2;
 	text-dy: 15;
 	}
     [name="München Hauptbahnhof Gleis 5-10"],
     [name="München Hauptbahnhof"],
+    [name="Fraunhoferstraße"],
     [name="München Hauptbahnhof Gleis 27-36"]{
       text-name: '';
       marker-opacity: 0;

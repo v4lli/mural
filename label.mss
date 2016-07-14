@@ -123,17 +123,13 @@
 		text-placement: line;
 		text-face-name: @sans;
 		text-fill: #666;
-		text-size: 6;
+		text-size: 9.5;
 		text-halo-fill: @road_halo;
 		text-halo-radius: 1.5;
 		text-halo-rasterizer: fast;
 		text-repeat-distance: 500000;
-		text-margin: 10;
+		//text-margin: 10;
 		text-placement-type: simple;
-
-		[zoom>=14] { text-size: 6.5; }
-		[zoom>=16] { text-size: 8.5; }
-		[zoom>=18] { text-size: 9.5; }
 
 		[class='motorway'],[class='trunk'],
 		[class='primary'],[class='secondary'] {
@@ -142,31 +138,49 @@
 			text-min-path-length: 100;
 
 			text-spacing: 80000;
-			text-margin: 20;
+			text-margin: 5;
 			text-allow-overlap: false;
 			text-repeat-distance: 1000;
-			[zoom>=14] { text-size: 9; }
+			[zoom>=14] { text-size: 10; }
 			[zoom>=16] { text-size: 10; text-face-name: @sans_bold; }
 			[zoom>=17] { text-size: 11; }
 			[zoom>=18] { text-size: 13; }
 		}
-
-		[name="Isarring"],[name="Lindwurmstraße"] {
+		[name="Schleißheimer Straße"] {
+			text-min-path-length: 274;
+		}
+		[name="Ingolstädter Straße"] {
+			text-min-path-length: 274;
+		}
+		[name="Isarring"],[name="Lindwurmstraße"],[name="Denninger Straße"]  {
 			text-min-path-length: 300;
 		}
-		[name="Landsberger Straße"],[name="Bodenseestraße"] {
+		[name="Landsberger Straße"],[name="Bodenseestraße"],
+		[name="Werinherstraße"], [name="Cosimastraße"]  {
 			text-min-path-length: 275;
 		}
-		[name="Chiemgaustraße"], [name="Ständlerstraße"] {
-			text-min-path-length: 270;
+		[name="Denninger Straße"], [name="Heidemannstraße"] {
+			text-min-path-length: 285;
 		}
 		[name="Einsteinstraße"],[name="Zschokkestraße"],
 		[name="Innsbrucker Ring"],[name="Westendstraße"],
-		[name="Rosenheimer Straße"],[name="Candidstraße"] {
+		[name="Rosenheimer Straße"],[name="Candidstraße"],
+		[name="Chiemgaustraße"], [name="Ständlerstraße"],
+		[name="Frankfurter Ring"], [name="Englschalkinger Straße"],
+		[name="Fasangartenstraße"], [name="Arnulfstraße"],
+		[name="Ackermannstraße"], [name="Truderinger Straße"] {
 			text-min-path-length: 250;
 		}
-		[name="Wittelsbacherstraße"],[name="Garmischer Straße"] {
+		[name="Wittelsbacherstraße"],[name="Garmischer Straße"],
+		[name="Ottobrunner Straße"] {
 			text-min-path-length: 230;
+		}
+		[name="Neuherbergstraße"],[name="Dülferstraße"] {
+			text-min-path-length: 190;
+		}
+
+		[name="Triebstraße"], [name="Effnerstraße"] {
+			text-min-path-length: 140;
 		}
 		[name=~".*rücke"] {
 			text-min-path-length: 10;
@@ -195,7 +209,7 @@
     text-character-spacing: 0.25;
     text-placement: line;
     text-face-name: @sans;
-    text-size: 8;
+    text-size: 10;
 	text-fill: #666;
   		text-halo-fill: @road_halo;
 		text-halo-radius: 1;
@@ -204,7 +218,7 @@
     [zoom>=17] { text-size: 10; }
     [zoom>=18] { text-size: 11; }
     text-repeat-distance: 5000;
-    text-margin: 100;
+    text-margin: 5;
   }
 }
 
@@ -215,23 +229,24 @@
 #poi_label[type='Grave Yard'],
 #poi_label[type='Cemetery'],
 #poi_label[type='Hospital'],
+#poi_label[type='Park'],
 #poi_label[type='Zoo'],
 #poi_label[type='Museum']{
   [zoom>=14][scalerank<3]{
     text-name: @name;
     text-face-name: @sans;
-    text-fill: #666;
+    text-fill: #464646;
     text-halo-fill: fadeout(#fff,75);
-    text-halo-radius: 1;
+    text-halo-radius: 1.5;
     text-halo-rasterizer: fast;
     text-line-spacing: -4;
     text-wrap-width: 80;
     text-wrap-before: true;
     text-allow-overlap: false;
     [scalerank=1] {
-      [zoom>=15] { text-size: 11; text-wrap-width: 100; }
-      [zoom>=16] { text-size: 12; text-wrap-width: 120; }
-      [zoom>=17] { text-size: 14; text-wrap-width: 130; }
+      [zoom>=15] { text-size: 13; text-wrap-width: 100; }
+      [zoom>=16] { text-size: 14; text-wrap-width: 120; }
+      [zoom>=17] { text-size: 15; text-wrap-width: 130; }
     }
     [scalerank=2] {
       [zoom>=16] { text-size: 11; text-wrap-width: 100;}

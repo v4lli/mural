@@ -156,12 +156,17 @@ Map {
 	}
 	[class='agriculture'] {
 		polygon-fill: @agriculture;
+        polygon-opacity: 0.2;
 	}
 	[class='glacier'],
 	[class='piste'] {
 		polygon-fill: @snow;
 	}
-	[class='wood'],[class='scrub'] {
+	[class='wood'] {
+		polygon-fill: @wood;
+		polygon-opacity: 0.5;
+	}
+    [class='scrub']{
 		polygon-fill: @wood;
 		polygon-opacity: 0.25;
 	}

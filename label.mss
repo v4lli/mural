@@ -99,42 +99,6 @@
 	}
 }
 
-#waterway_label[class='river'][zoom>=13],
-#waterway_label[class='canal'][zoom>=15],
-#waterway_label[class='stream'][zoom>=15],
-#waterway_label[class='stream_intermittent'][zoom>=15] {
-	text-name: @name;
-	text-face-name: @sans_italic;
-	text-repeat-distance: 5000000;
-	text-avoid-edges: true;
-	text-placement: line;
-	text-spacing: 30000;
-	text-min-path-length: 200;
-	text-fill: darken(@water, 30);
-	text-halo-fill: fadeout(#fff,80%);
-	text-halo-radius: 1.5;
-	text-halo-rasterizer: fast;
-	text-allow-overlap: false;
-	text-size: 10;
-	text-character-spacing: 1;
-	[class='river'][zoom=14],
-	[class='canal'][zoom=16],
-	[class='stream'][zoom>=15],
-	[class='stream_intermittent'][zoom>=15] {
-		text-size: 10;
-	}
-	[class='river'][zoom=15],
-	[class='canal'][zoom>=17] {
-		text-size: 11;
-		text-spacing: 400;
-	}
-	[class='river'][zoom>=16],
-	[class='canal'][zoom>=18] {
-		text-size: 14;
-		text-spacing: 400;
-	}
-}
-
 // =====================================================================
 // 5__ ROAD LABELS
 // =====================================================================
@@ -175,16 +139,16 @@
 		[class='primary'],[class='secondary'] {
 			text-transform: uppercase;
 			text-fill: #444;
-			text-min-path-length: 170;
+			text-min-path-length: 100;
 
 			text-spacing: 80000;
-			text-margin: 100;
+			text-margin: 20;
 			text-allow-overlap: false;
 			text-repeat-distance: 1000;
-			[zoom>=14] { text-size: 10; }
-			[zoom>=16] { text-size: 11; text-face-name: @sans_bold; }
-			[zoom>=17] { text-size: 12; }
-			[zoom>=18] { text-size: 14; }
+			[zoom>=14] { text-size: 9; }
+			[zoom>=16] { text-size: 10; text-face-name: @sans_bold; }
+			[zoom>=17] { text-size: 11; }
+			[zoom>=18] { text-size: 13; }
 		}
 
 		[name="Isarring"],[name="Lindwurmstraße"] {
@@ -205,7 +169,7 @@
 			text-min-path-length: 230;
 		}
 		[name=~".*rücke"] {
-			text-min-path-length: 0;
+			text-min-path-length: 10;
 		}
 	}
 }
@@ -275,3 +239,54 @@
     }
   }
 }
+
+#waterway_label[class='river'][zoom>=13],
+#waterway_label[class='canal'][zoom>=15],
+#waterway_label[class='stream'][zoom>=15],
+#waterway_label[class='stream_intermittent'][zoom>=15] {
+	text-name: @name;
+	text-face-name: @sans_italic;
+	text-repeat-distance: 5000000;
+	text-avoid-edges: true;
+	text-placement: line;
+	text-spacing: 30000;
+	text-min-path-length: 200;
+	text-fill: darken(@water, 30);
+	text-halo-fill: fadeout(#fff,80%);
+	text-halo-radius: 1.5;
+	text-halo-rasterizer: fast;
+	text-allow-overlap: false;
+	text-size: 10;
+	text-character-spacing: 1;
+	[class='river'][zoom=14],
+	[class='canal'][zoom=16],
+	[class='stream'][zoom>=15],
+	[class='stream_intermittent'][zoom>=15] {
+		text-size: 10;
+	}
+	[class='river'][zoom=15],
+	[class='canal'][zoom>=17] {
+		text-size: 11;
+		text-spacing: 400;
+	}
+	[class='river'][zoom>=16],
+	[class='canal'][zoom>=18] {
+		text-size: 14;
+		text-spacing: 400;
+	}
+}
+
+/*
+#road_label[class='motorway'][reflen>=1][shield="de-motorway"] {
+  shield-name: '[ref]';
+  shield-face-name: @sans_bold;
+  shield-fill: #ffffff;
+  shield-min-distance: 60;
+  shield-file: url('img/autobahn_smallerer.png');
+  shield-unlock-image: true;
+  shield-size: 14;
+  shield-avoid-edges: true;
+  shield-spacing: 10000;
+  shield-min-distance: 10000;
+  shield-character-spacing: 1.6;
+}*/

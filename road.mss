@@ -62,7 +62,7 @@
 		line-smooth: 0.4;
 		[zoom=15] { line-width: @rdz15_min / 3; }
 		[zoom=16] { line-width: @rdz16_min / 3; }
-		[zoom=17] { line-width: @rdz17_min / 3; }
+		[zoom>=17] { line-width: @rdz17_min / 3; }
 		[zoom>17] { line-width: @rdz18_min / 3; }
 	}
 	['mapnik::geometry_type'=3] {
@@ -172,11 +172,11 @@
 }
 
 // case fuer groessere strassen
-#road::case[class='trunk'][zoom>=11],
-#road::case[class='primary'][zoom>=11],
-#road::case[class='link'][zoom>=11],
-#road::case[class='secondary'][zoom>=11],
-#road::case[class='tertiary'][zoom>=11] {
+#road::case[class='trunk'][structure!='bridge'][zoom>=11],
+#road::case[class='primary'][structure!='bridge'][zoom>=11],
+#road::case[class='link'][structure!='bridge'][structure!='tunnel'][zoom>=11],
+#road::case[class='secondary'][structure!='bridge'][zoom>=11],
+#road::case[class='tertiary'][structure!='bridge'][zoom>=11] {
 	['mapnik::geometry_type'=2] {
 		line-color: @main_case;
 		line-join: round;
@@ -422,10 +422,16 @@
 		[zoom=16] { f/line-width: @rdz16_med; }
 		[zoom=17] { f/line-width: @rdz17_med; }
 		[zoom>17] { f/line-width: @rdz18_med; }
+        //[structure='tunnel'] {
+        // 	f/line-dasharray: 10, 5;
+         //   f/opacity: 0.3;
+
+        //}
 	}
 	['mapnik::geometry_type'=3] {
 		f/polygon-fill: @main_fill;
 	}
+
 }
 
 #road::fill[class='street'][zoom>=14] {
@@ -541,5 +547,36 @@
 	}
 	['mapnik::geometry_type'=3] {
 		polygon-fill: @road_line;
+	}
+}
+
+#road::bridgecase[class='link'][structure='bridge'][zoom>=9],
+#road::bridgecase[class='trunk'][structure='bridge'][zoom>=9],
+#road::bridgecase[class='primary'][structure='bridge'][zoom>=9],
+#road::bridgecase[class='secondary'][structure='bridge'][zoom>=9]{
+	['mapnik::geometry_type'=2] {
+		line-color: @road_case;
+		opacity: 0.12;
+		line-join: round;
+		line-cap: butt;
+
+		[zoom<=15] { line-width: @rdz15_med + 2.5; }
+		[zoom=16] { line-width: @rdz16_med + 3; }
+		[zoom=17] { line-width: @rdz17_med + 4; }
+		[zoom>17] { line-width: @rdz18_med + 4; }
+	}
+}
+
+#road::bridgefill[class='trunk'][structure='bridge'][zoom>=9],
+#road::bridgefill[class='link'][structure='bridge'][zoom>=9],
+#road::bridgefill[class='primary'][structure='bridge'][zoom>=9],
+#road::bridgefill[class='secondary'][structure='bridge'][zoom>=9]{
+	['mapnik::geometry_type'=2] {
+   
+		f/line-color: mix(@road_fill,@main_fill,50%);
+		[zoom<=15] { f/line-width: @rdz15_med; }
+		[zoom=16] { f/line-width: @rdz16_med; }
+		[zoom=17] { f/line-width: @rdz17_med; }
+		[zoom>17] { f/line-width: @rdz18_med; }
 	}
 }

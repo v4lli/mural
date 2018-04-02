@@ -24,7 +24,7 @@
 // =====================================================================
 // Public Transit Stations
 // =====================================================================
-#rail_station_label[network=~'rail.*'][zoom>10] {
+#rail_station_label[network=~'rail.*'][zoom>13] {
 	marker-file: url("img/rail/[network]-18.svg");
 	marker-height: 18;
 	marker-allow-overlap: false;
@@ -46,6 +46,12 @@
 	text-halo-radius: 2;
 	text-dy: 15;
 	}
+    [name="Karlsplatz (Stachus)"] {
+        [network="rail-metro"] {
+          text-name: '';
+          text-face-name: @sans;
+      }
+    }
     [name="München Hauptbahnhof Gleis 5-10"],
     [name="München Hauptbahnhof"],
     [name="Fraunhoferstraße"],

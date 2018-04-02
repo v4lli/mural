@@ -248,6 +248,6 @@ Map {
 }
 
 #barrier_line[zoom>=14][class='cliff'] {
-	line-pattern-file: url(img/pattern/cliff-md.png);
+	line-pattern-file: url(img/pattern/cliff-lg.png);
 	[zoom>=16] { line-pattern-file: url(img/pattern/cliff-lg.png); }
 }

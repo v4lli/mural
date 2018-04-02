@@ -20,9 +20,9 @@
 @rock:              #D8D7D5;
 @park:              #C8DF9F;
 @cemetery:          #D5DCC2;
-@wood:              #B0C89F;
+@wood:              darken(#B0C89F, 4);
 @industrial:        #DDDCDC;
-@agriculture:       #EAE0D0;
+@agriculture:       darken(#E8D5C3, 3);
 @snow:              #EDE5DD;
 @crop:              #E9E5C2;
 @building:          darken(@land, 8);

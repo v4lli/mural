@@ -232,7 +232,7 @@
 #poi_label[type='Park'],
 #poi_label[type='Zoo'],
 #poi_label[type='Museum']{
-  [zoom>=14][scalerank<3]{
+  [zoom>=14][scalerank<3][name!='Freizeitpark Eduard-Schmid-Straße']{
     text-name: @name;
     text-face-name: @sans;
     text-fill: #464646;
@@ -259,6 +259,7 @@
 #waterway_label[class='canal'][zoom>=15],
 #waterway_label[class='stream'][zoom>=15],
 #waterway_label[class='stream_intermittent'][zoom>=15] {
+  [name!='Kleine Isar'][name!='Isar']{
 	text-name: @name;
 	text-face-name: @sans_italic;
 	text-repeat-distance: 5000000;
@@ -289,6 +290,7 @@
 		text-size: 14;
 		text-spacing: 400;
 	}
+  }
 }
 
 /*

@@ -23,3 +23,8 @@ München, Fröttmaning (Zoom 15)
 
 München, Thalkirchen (Zoom 15)
 ![München, Thalkirchen (Zoom 15)](screenshots//16_11.54886245727539_48.10185727074718.png?raw=true "München, Thalkirchen (Zoom 15)")
+
+# Copyright
+
+* © OpenStreetMap contributors
+* The cartocss files are forked from one of Mapbox Studio Classic's default themes

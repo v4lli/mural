@@ -9,7 +9,8 @@ Streets Mural uses Mapbox Streets v7 as its data source. Most changes to the
 ## Limitations
 * Uses only German symbols for public transportation
 * Not optimized for zoom levels lower than 14
-* Still "work in progress"! Labels are still missing entirely.
+* Not intended to be used as a theme for scrollable maps.
+* Many small annoyances and many hacks
 
 # Screenshots
 
